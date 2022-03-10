@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA12CACD27DA6995006EEF60 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12CACC27DA6995006EEF60 /* TaskCell.swift */; };
 		FA486FE427D90D7800CA48A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA486FE327D90D7800CA48A0 /* AppDelegate.swift */; };
 		FA486FE627D90D7800CA48A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA486FE527D90D7800CA48A0 /* SceneDelegate.swift */; };
 		FA486FEB27D90D7800CA48A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA486FE927D90D7800CA48A0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA12CACC27DA6995006EEF60 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		FA486FE027D90D7800CA48A0 /* To-Do Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA486FE327D90D7800CA48A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA486FE527D90D7800CA48A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA12CACA27DA691E006EEF60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA12CACB27DA6935006EEF60 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA12CACB27DA6935006EEF60 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA12CACC27DA6995006EEF60 /* TaskCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		FA486FD727D90D7800CA48A0 = {
 			isa = PBXGroup;
 			children = (
@@ -61,10 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				FA486FF927D90F7400CA48A0 /* Model */,
+				FA486FF727D90E7200CA48A0 /* TaskListController.swift */,
 				FA486FE327D90D7800CA48A0 /* AppDelegate.swift */,
 				FA486FE527D90D7800CA48A0 /* SceneDelegate.swift */,
 				FA486FE927D90D7800CA48A0 /* Main.storyboard */,
-				FA486FF727D90E7200CA48A0 /* TaskListController.swift */,
 				FA486FEC27D90D7A00CA48A0 /* Assets.xcassets */,
 				FA486FEE27D90D7A00CA48A0 /* LaunchScreen.storyboard */,
 				FA486FF127D90D7A00CA48A0 /* Info.plist */,
@@ -77,6 +95,7 @@
 			children = (
 				FA486FFA27D90F8700CA48A0 /* Task.swift */,
 				FA486FFC27D9108400CA48A0 /* TaskStorage.swift */,
+				FA12CACA27DA691E006EEF60 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +175,7 @@
 				FA486FE427D90D7800CA48A0 /* AppDelegate.swift in Sources */,
 				FA486FE627D90D7800CA48A0 /* SceneDelegate.swift in Sources */,
 				FA486FFD27D9108400CA48A0 /* TaskStorage.swift in Sources */,
+				FA12CACD27DA6995006EEF60 /* TaskCell.swift in Sources */,
 				FA486FF827D90E7200CA48A0 /* TaskListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
