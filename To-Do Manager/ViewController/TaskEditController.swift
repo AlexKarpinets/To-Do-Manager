@@ -9,6 +9,11 @@ import UIKit
 
 class TaskEditController: UITableViewController {
     
+    @IBOutlet var taskTitle: UITextField!
+    @IBOutlet var taskTypeLabel: UILabel!
+    
+    private var taskTitles: [TaskPriority:String] = [.important: "Важная", .normal: "Текущая"]
+    
     var taskText: String = ""
     var taskType: TaskPriority = .normal
     var taskStatus: TaskStatus = .planned
@@ -17,6 +22,8 @@ class TaskEditController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        taskTitle?.text = taskText
+        taskTypeLabel?.text = taskTitles[taskType]
     }
 
     // MARK: - Table view data source

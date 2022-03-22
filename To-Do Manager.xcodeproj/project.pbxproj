@@ -17,6 +17,9 @@
 		FA486FFB27D90F8700CA48A0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA486FFA27D90F8700CA48A0 /* Task.swift */; };
 		FA486FFD27D9108400CA48A0 /* TaskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA486FFC27D9108400CA48A0 /* TaskStorage.swift */; };
 		FA7417E027E8D722002FEB5A /* TaskEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7417DF27E8D722002FEB5A /* TaskEditController.swift */; };
+		FA8AE6DF27EA416600B9CC3E /* TaskTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE6DE27EA416600B9CC3E /* TaskTypeController.swift */; };
+		FA8AE6E227EA434500B9CC3E /* TaskTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AE6E027EA434500B9CC3E /* TaskTypeCell.swift */; };
+		FA8AE6E327EA434500B9CC3E /* TaskTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8AE6E127EA434500B9CC3E /* TaskTypeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		FA486FFA27D90F8700CA48A0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FA486FFC27D9108400CA48A0 /* TaskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStorage.swift; sourceTree = "<group>"; };
 		FA7417DF27E8D722002FEB5A /* TaskEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditController.swift; sourceTree = "<group>"; };
+		FA8AE6DE27EA416600B9CC3E /* TaskTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeController.swift; sourceTree = "<group>"; };
+		FA8AE6E027EA434500B9CC3E /* TaskTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeCell.swift; sourceTree = "<group>"; };
+		FA8AE6E127EA434500B9CC3E /* TaskTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTypeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				FA12CACC27DA6995006EEF60 /* TaskCell.swift */,
+				FA8AE6E027EA434500B9CC3E /* TaskTypeCell.swift */,
+				FA8AE6E127EA434500B9CC3E /* TaskTypeCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			children = (
 				FA486FF727D90E7200CA48A0 /* TaskListController.swift */,
 				FA7417DF27E8D722002FEB5A /* TaskEditController.swift */,
+				FA8AE6DE27EA416600B9CC3E /* TaskTypeController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 			files = (
 				FA486FF027D90D7A00CA48A0 /* LaunchScreen.storyboard in Resources */,
 				FA486FED27D90D7A00CA48A0 /* Assets.xcassets in Resources */,
+				FA8AE6E327EA434500B9CC3E /* TaskTypeCell.xib in Resources */,
 				FA486FEB27D90D7800CA48A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,9 +196,11 @@
 				FA486FE427D90D7800CA48A0 /* AppDelegate.swift in Sources */,
 				FA486FE627D90D7800CA48A0 /* SceneDelegate.swift in Sources */,
 				FA486FFD27D9108400CA48A0 /* TaskStorage.swift in Sources */,
+				FA8AE6DF27EA416600B9CC3E /* TaskTypeController.swift in Sources */,
 				FA12CACD27DA6995006EEF60 /* TaskCell.swift in Sources */,
 				FA486FF827D90E7200CA48A0 /* TaskListController.swift in Sources */,
 				FA7417E027E8D722002FEB5A /* TaskEditController.swift in Sources */,
+				FA8AE6E227EA434500B9CC3E /* TaskTypeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
