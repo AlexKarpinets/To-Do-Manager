@@ -98,7 +98,7 @@
                     <navigationItem key="navigationItem" id="yRe-es-An3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HpZ-Bl-mA0">
                             <connections>
-                                <segue destination="5Y2-AM-mtE" kind="show" identifier="" id="rXC-8M-IVG"/>
+                                <segue destination="5Y2-AM-mtE" kind="show" identifier="toCreateScreen" id="rXC-8M-IVG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,7 +110,7 @@
         <!--Task Edit Controller-->
         <scene sceneID="ced-xX-fy6">
             <objects>
-                <tableViewController id="5Y2-AM-mtE" customClass="TaskEditController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TaskEditController" id="5Y2-AM-mtE" customClass="TaskEditController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="lmI-Ea-F1d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,11 +175,30 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jfu-M7-w4N">
-                                        <rect key="frame" x="0.0" y="105.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="105.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfu-M7-w4N" id="SHS-oi-eKy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выполнена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-4g-bmL">
+                                                    <rect key="frame" x="20" y="11" width="325" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o4l-YW-dsV">
+                                                    <rect key="frame" x="345" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Df-4g-bmL" firstAttribute="leading" secondItem="SHS-oi-eKy" secondAttribute="leadingMargin" id="CgK-Cj-FIx"/>
+                                                <constraint firstItem="o4l-YW-dsV" firstAttribute="leading" secondItem="7Df-4g-bmL" secondAttribute="trailing" id="HW3-gn-kIx"/>
+                                                <constraint firstItem="o4l-YW-dsV" firstAttribute="centerY" secondItem="SHS-oi-eKy" secondAttribute="centerY" id="NT8-BZ-ymW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o4l-YW-dsV" secondAttribute="trailing" id="Stg-bl-3Iy"/>
+                                                <constraint firstItem="7Df-4g-bmL" firstAttribute="top" secondItem="SHS-oi-eKy" secondAttribute="topMargin" id="WKJ-DW-xBA"/>
+                                                <constraint firstItem="7Df-4g-bmL" firstAttribute="bottom" secondItem="SHS-oi-eKy" secondAttribute="bottomMargin" id="q15-Gn-HnY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -190,8 +209,15 @@
                             <outlet property="delegate" destination="5Y2-AM-mtE" id="Pec-kw-qEe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xuf-9e-1SR"/>
+                    <navigationItem key="navigationItem" id="xuf-9e-1SR">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="Qlu-5i-fAI">
+                            <connections>
+                                <action selector="saveTask:" destination="5Y2-AM-mtE" id="Dkh-vA-dhF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="taskStatusSwitch" destination="o4l-YW-dsV" id="C3o-f5-Ow0"/>
                         <outlet property="taskTitle" destination="cdg-YP-LTe" id="toc-cm-7C4"/>
                         <outlet property="taskTypeLabel" destination="zml-9j-K7m" id="tE9-jF-aZ6"/>
                     </connections>
