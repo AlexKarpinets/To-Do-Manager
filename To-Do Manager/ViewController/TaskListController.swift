@@ -14,6 +14,12 @@ class TaskListController: UITableViewController {
     var taskStatusPosition: [TaskStatus] = [.planned, .completed]
     var tasks: [TaskPriority:[TaskProtocol]] = [:] {
         didSet {
+            var savingArray: [TaskProtocol] = []
+            tasks.forEach { _, value in
+                savingArray += value
+            }
+            taskStorage.saveTasks(savingArray)
+            
             for (tasksGroupPriority, taskGroup) in tasks {
                 tasks[tasksGroupPriority] = taskGroup.sorted { task1, task2 in
                     let task1position = taskStatusPosition.firstIndex(of: task1.status) ?? 0
@@ -26,7 +32,6 @@ class TaskListController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTasks()
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
@@ -126,15 +131,7 @@ class TaskListController: UITableViewController {
         }
         tableView.reloadData()
     }
-    
-    private func loadTasks() {
-        sectionsTypesPosition.forEach { taskType in
-            tasks[taskType] = []
-        }
-        taskStorage.loadTasks().forEach { task in
-            tasks[task.type]?.append(task)
-        }
-    }
+
     
     //    private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
     //        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellConstraints", for: indexPath)
@@ -185,6 +182,15 @@ class TaskListController: UITableViewController {
             resultSymbol = ""
         }
         return resultSymbol
+    }
+    
+    func setTasks(_ tasksCollection: [TaskProtocol]) {
+        sectionsTypesPosition.forEach { taskType in
+            tasks[taskType] = []
+        }
+        tasksCollection.forEach { task in
+            tasks[task.type]?.append(task)
+        }
     }
 }
 
