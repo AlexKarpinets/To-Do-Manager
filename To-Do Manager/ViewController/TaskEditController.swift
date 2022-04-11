@@ -45,6 +45,7 @@ class TaskEditController: UITableViewController {
             let destination = segue.destination as! TaskTypeController
             destination.selectedType = taskType
             destination.doAfterTypeSelected = { [unowned self] selectedType in
+                taskType = selectedType
                 taskTypeLabel?.text = taskTitles[taskType]
             }
         }
