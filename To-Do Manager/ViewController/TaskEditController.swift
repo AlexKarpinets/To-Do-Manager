@@ -53,9 +53,17 @@ class TaskEditController: UITableViewController {
     
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         let title = taskTitle?.text ?? ""
-        let type = taskType
-        let status: TaskStatus = taskStatusSwitch.isOn ? .completed : .planned
-        doAfterEdit?(title, type, status)
-        navigationController?.popViewController(animated: true)
+        if title == "" {
+            let alert = UIAlertController(title: "Введено неверное значение", message: "Введите задачу", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(okButton)
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            let type = taskType
+            let status: TaskStatus = taskStatusSwitch.isOn ? .completed : .planned
+            doAfterEdit?(title, type, status)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
